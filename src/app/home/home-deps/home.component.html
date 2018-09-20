@@ -1,0 +1,51 @@
+<app-username-comp *ngIf="isLogedin"></app-username-comp>
+<app-stranger-comp *ngIf="!isLogedin"></app-stranger-comp>
+
+<form #f>
+<div class="wrapper form-group">
+<div class = "form-group cont">
+    <!-- <div *ngIf="content.errors && content.touched && btn.clicked" class = "alert alert-danger">you need to enter a message</div> -->
+
+	<input [class.hidden]="!isLogedin"
+    type="text" #content class="form-control inputField" maxlength="1000">
+
+    <button *ngIf="isLogedin" type="submit" class="btn btn-primary"  id="submit" (click)="onAdd(content)" [class.hidden]="hideAdd" 
+    >Add Post</button>
+    
+    <button *ngIf="isLogedin"   class="btn" id="edit" (click)="onClicked()">Edit Posts</button>
+</div>
+<!--             -->
+
+</div>
+    <div class="custom">
+    <div *ngFor="let post of posts; index as i" class="list-group-item bg-light" id="Post">
+        <div id="message">
+            <article class= "post">
+                <header><span class="font-weight-bold" style="font-family: Oswald">{{ post.authorName }}</span></header>
+                <div class="content">
+                    <p id="message-content">{{ post.content | postPipe }}</p>
+                </div>
+                 <div id = "date" style="text-align: right ;">{{ post.date | date:'medium' }}</div>
+            </article>
+        </div>
+        
+        <hr>
+
+
+        <div *ngIf = "authenticated === post.userId">
+                <button *ngIf="editMode" class="btn btn-success" id="update" (click)="onUpdate(content , post)" [class.hidden]="hideUpdate">Update</button>
+                <button class="btn btn-success" id="update" (click)="onSave(content , post , f)" *ngIf="showSave && editMode">Save</button>  
+                <button *ngIf="editMode" class="btn btn-danger" id="delete" (click)="onDelete(post.postId , i)" [class.hidden]="hideDelete">Delete</button>
+                <button *ngIf="editMode" class="btn btn-danger" id="cancel" [class.hidden]="hideCancel" (click)="onCancel(content)">Cancel</button>
+        </div>
+    </div>
+</div>
+</form>
+
+    
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+.listItem {
+    margin-bottom: 30px ;
+    margin-right : 20px ;
+}
+
+.Active {
+    color : black ;
+}
+.wrapper {
+    margin-bottom : 10px ;
+    margin-top : 150px ;
+}
+a{
+    text-decoration: none
+}
+.custom {
+    font-family: Tahoma !important ;
+}
+.hidden {
+    visibility: hidden ;
+}

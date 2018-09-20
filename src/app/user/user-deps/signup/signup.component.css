@@ -1,0 +1,25 @@
+.checkbox {
+    float : right ;
+    padding-top : 10px ;
+}
+.wrapper {
+    width : 1000px;
+    margin-bottom: 150px;
+    margin-top : 10px ;
+    margin-right : 100px !important ;
+
+}
+.check {
+    margin-right : 10px
+}
+
+.hidden {
+    visibility: hidden ;
+}
+
+#submit {
+    border-radius: 25px ;
+}
+.inputField {
+    border-radius: 10px ;
+}

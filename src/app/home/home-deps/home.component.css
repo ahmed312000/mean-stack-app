@@ -1,0 +1,89 @@
+#message { 
+    width :1000px  ; 
+    display : block ;
+    padding : 10px ;
+    padding-right : 50px
+
+}
+#authorName {
+    
+}
+#message-content {
+    margin-left :50px ;
+    margin-bottom: 0 ;
+}
+
+#listItem {
+    
+}
+#Post {
+    margin-left :50px;
+    width : 1000px;
+    margin-bottom : 20px ;
+    margin-top : 80px ;
+    border-radius: 25px ;
+
+}
+ .wrapper {
+    width : 600px ;
+    margin-top : 100px ;
+    margin-left : 300px ;
+}
+
+
+#date {
+    display: inline ;
+    float : right;
+    margin-right : 16px;
+    margin-bottom: 0 ;
+    margin-top : 0;
+    padding-top: 0 ;
+    font-family: Tahoma ;
+}
+
+#update {
+    float : right ;
+    margin-top : 20px ;
+    margin-bottom: 50px ;
+    border-radius: 25px ;
+
+}
+#delete {
+    float : right ;
+    margin-top : 20px ;
+    margin-bottom: 50px ;
+    margin-right : 10px ;
+    border-radius: 25px ;
+
+}
+#cancel {
+    float : left ;
+    margin-top : 20px ;
+    margin-bottom: 50px ;
+    margin-right : 10px ;
+    border-radius: 25px ;
+
+}
+.hidden {
+    visibility: hidden ;
+}
+
+#edit {
+    margin-right : 40px ;
+    float : left ;
+    border-radius: 25px !important ;
+    margin-top : 14px ;
+}
+
+#submit {
+    float : right ;
+    border-radius: 25px !important ;
+    margin-top : 14px ;
+}
+.inputField {
+    border-radius: 10px ;
+}
+.custom {
+    margin-bottom: 200px
+}
+

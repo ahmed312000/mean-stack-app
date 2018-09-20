@@ -1,0 +1,6 @@
+
+<ul class="nav nav-pills wrapper">
+    <li class = 'nav-item listItem custom'><a (click)="onSignup()" [class.Active]="signupActive" [routerLink]="['/user']">Signup</a></li>
+    <li *ngIf="!isLoggedin" class = 'nav-item listItem custom'><a (click)="onLogin()" [class.Active]="loginActive" [routerLink]="['/user/login']">Login</a></li>
+    <li class = 'nav-item listItem custom'><a [class.hidden]="!isLoggedin" (click)="onProfile()" [class.Active]="profileActive" [routerLink]="['/user/profile']">Profile</a></li>
+</ul>

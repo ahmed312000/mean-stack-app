@@ -1,0 +1,94 @@
+
+    <div class="alert alert-danger" *ngIf="f.errors">
+        passwords do not match
+    </div>
+
+    <!-- <div class="alert alert-danger">
+        Username Taken
+    </div> -->
+
+
+<div class="wrapper">
+<form [formGroup]='f' (ngSubmit)="onSubmit(userInput)">
+    <!-- username -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"
+        placeholder="type your username" 
+        class="form-control inputField" 
+        formControlName = "username"
+        [class.is-invalid]="username.invalid && username.touched"
+        (input)="onInput($event)" #userInput>
+
+    
+        <!-- username alert -->
+        <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+                <div *ngIf="username.errors.required">Username Required</div>
+                <div *ngIf="username.errors.usernameTaken">Username is Taken</div>
+        </div>
+
+    </div>
+
+    <!-- email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email"
+         placeholder="type your email"
+         class="form-control inputField"
+         formControlName = "email"
+         [class.is-invalid]="email.invalid && email.touched">
+         
+    <!-- email alert  -->
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+            <div *ngIf="email.errors.required">Email Required</div>
+            <div *ngIf="email.errors.email">Invalid Email</div>
+    </div>
+    
+
+    </div>
+    <!-- password -->
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input [type]="passwordType" 
+        placeholder="enter your password" 
+        class="form-control inputField"
+        formControlName = "password"
+        [class.is-invalid]="password.invalid && password.touched">
+
+        <div class="checkbox">
+
+        <label for="checkbox" class="check">Show Password</label>
+        <input type="checkbox" name="checkbox" (change)="onChange($event)">
+
+        </div>
+    
+        <!--password alert --> 
+        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.errors.required">Password Required</div>
+                <div *ngIf="password.errors.minlength">Please Type A Password More Than 8 Characters</div>
+        </div>
+    </div>
+
+<!-- rePassword -->
+<div class="form-group">
+    <label for="rePassword">Retype Password</label>
+    <input [type]="passwordType2" placeholder="Type password again" formControlName="rePassword" class="form-control inputField"
+    [class.is-invalid]= "rePassword.invalid && rePassword.touched">
+
+
+    <div class="checkbox">
+
+        <label for="checkbox" class="check">Show Password</label>
+        <input type="checkbox" name="checkbox" (change)="onChange2($event)">
+
+        </div>
+
+    <div *ngIf = "rePassword.invalid && rePassword.touched" class="alert alert-danger">
+        <div *ngIf="rePassword.errors.required">password 2 required</div>
+    </div>
+</div>
+
+
+    <button type="submit" class="btn btn-primary" id="submit" [disabled]="f.invalid">SignUp</button>
+</form>
+</div>

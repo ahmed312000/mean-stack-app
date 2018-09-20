@@ -1,0 +1,43 @@
+<form [formGroup]='form' (ngSubmit)="onSubmit(username , password)">
+
+    <div class="alert alert-danger" *ngIf = "form.errors">
+        username , password is invalid
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+        type="text" 
+        #username
+        class="inputField form-control"
+        placeholder="Enter Your Username"
+        formControlName = "username-2"
+        [class.is-invalid]="(username2.invalid && username2.touched)">
+        <div class="alert alert-danger" *ngIf = "username2.invalid && username2.touched"> 
+            <div *ngIf="username2.errors.required">
+            username required
+        </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+        type="password" 
+        #password
+        class="inputField form-control"
+        placeholder="Enter Your Password"
+        formControlName = "password-2"
+        [class.is-invalid]="(password2.invalid && password2.touched)">
+
+        <div class="alert alert-danger" *ngIf = "password2.invalid && password2.touched">
+            <div *ngIf="password2.errors.required">
+                password required
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" id="submit" class="btn btn-primary" [disabled]="username2.invalid && password2.invalid">Login</button>
+
+
+</form>

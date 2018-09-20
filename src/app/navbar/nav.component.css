@@ -1,0 +1,11 @@
+.bg-light {
+    background-color: #1FE0D7 !important ;
+}
+.custom {
+    font-family: Tahoma !important ;
+}
+.active {
+    color : white !important ;
+    font-size : 18px;
+    font-weight: 200 ;
+}
